@@ -1,0 +1,23 @@
+{
+  "name": "blog-board",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nodeServer.js",
+  "dependencies": {
+    "httpdispatcher": "^0.4.0",
+    "mustache": "^2.2.0",
+    "react": "^0.14.0",
+    "file-system": "^2.2.1"
+  },
+  "devDependencies": {
+    "file-system": "^2.2.1",
+    "httpdispatcher": "^0.4.0",
+    "mustache": "^2.2.0",
+    "react": "^0.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

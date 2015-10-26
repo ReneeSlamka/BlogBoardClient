@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Blog Board</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script>
+            function getData(event) {
+                var $name = $("#username").val();
+                var $password = $("#password").val();
+
+                $.ajax({
+                    cache: false,
+                    async: false,
+                    url: "http://localhost:8080/login",
+                    data: {"username": $name, "password": $password},
+                    dataType: 'json',
+                    success: function(result){
+                        alert("token recieved: " + result);
+                        $('.account-name').append('<p> Name: ' + result.name + '</p>');
+                    },
+                    error: function(request, textStatus, errorThrown) {
+                        alert(textStatus);
+                    },
+                    complete: function(request, textStatus) { //for additional info
+                        alert(request.responseText);
+                        alert(textStatus);
+                        window.location.href = request.responseJSON.httpResponseHeader;
+
+                    }
+                });
+            }
+        </script>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>Welcome to the Blog Board brah! Login below</h1>
+                    <p>
+                        Sign in and keep your friends up to date on all your amazing life happenings via the beauty of
+                        the communal blog board.
+                    </p>
+                    <div>
+                        <h4>Login Here</h4>
+                        <label>
+                            Username:
+                        </label>
+                        <input type="text" class="form-control" id="username" size="40">
+                        <label>
+                            Password:
+                        </label>
+                        <input type="text" class="form-control" id="password" size="40">
+                        <button onclick="getData()" id="submit-button" type="submit" class="btn btn-default">
+                            Submit
+                        </button>
+                    </div>
+                    <section class="account-name">
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
