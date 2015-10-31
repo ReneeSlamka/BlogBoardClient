@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login to BB Failed</title>
-</head>
-<body>
-    <h3>Sorry, it looks like something went wrong.</h3>
-    <p>Please return to the login page and try re-entering your username and/or password.</p>
+{% extends 'templates/layout.html' %}
 
-</body>
-</html>
+{% block title %}Login to BB Failed{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1>Sorry, it looks like something went wrong.</h1>
+            <img src="http://www.vidfails.com/wp-content/uploads/2015/06/What-a-Look-Cat-Fail.jpg">
+            <p>Please return to the login page and try re-entering your username and/or password.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

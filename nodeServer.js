@@ -27,7 +27,11 @@ app.get("/", function(req, res) {
 });
 
 app.get("/home", function(req, res) {
-	res.sendFile(__dirname + '/pages/home.html');
+	res.render('home', {});
+});
+
+app.get("/login-failure", function(req, res) {
+	res.render('login-failure', {});
 });
 
 

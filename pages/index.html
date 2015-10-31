@@ -1,6 +1,6 @@
 {% extends 'templates/layout.html' %}
 
-{% block title %}{% endblock %}
+{% block title %}Welcome to Blog Board{% endblock %}
 {% block css %}
 <link rel="stylesheet" type="text/css" href="/static/css/index.css">
 {% endblock %}
@@ -12,37 +12,54 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8 col-md-offset-2">
+            <h1>Welcome to Blog Board!</h1>
+            <p>
+                Keeping in touch your friends around the globe just got a whole lot easier.
+                With Blog Board, you can share stories, photos and new experiences. It's easy!
+                Sign up, create a board, invite your friends, and start posting!
+            </p>
 
-        </div>
-        <div class="col-md-6">
-
+            <h4>Create a New Account</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>
+                        Username:
+                    </label>
+                    <input type="text" class="form-control" id="new-username" size="40">
+                    <label>
+                        Password:
+                    </label>
+                    <input type="text" class="form-control" id="new-password" size="40">
+                    <label>
+                        Email:
+                    </label>
+                    <input type="email" class="form-control" id="new-email" size="40">
+                    <button onclick="createAccount()" id="create-account-button" type="submit" class="btn btn-default">
+                        Create Account
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>Welcome to the Blog Board brah! Login below</h1>
-            <p>
-                Sign in and keep your friends up to date on all your amazing life happenings via the beauty of
-                the communal blog board.
-            </p>
-            <div>
-                <h4>Login Here</h4>
-                <label>
-                    Username:
-                </label>
-                <input type="text" class="form-control" id="username" size="40">
-                <label>
-                    Password:
-                </label>
-                <input type="text" class="form-control" id="password" size="40">
-                <button onclick="getData()" id="submit-button" type="submit" class="btn btn-default">
-                    Submit
-                </button>
+            <h3>Already have an account? Sign in below</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>
+                        Username:
+                    </label>
+                    <input type="text" class="form-control" id="login-username" size="40">
+                    <label>
+                        Password:
+                    </label>
+                    <input type="text" class="form-control" id="login-password" size="40">
+                    <button onclick="getData()" id="login-button" type="submit" class="btn btn-default">
+                        Login
+                    </button>
+                </div>
             </div>
-            <section class="account-name">
-
-            </section>
         </div>
     </div>
 </div>
