@@ -1,4 +1,5 @@
 //Lets require/import the HTTP module
+var port = 3000;
 var express = require('express');
 var app = express();
 var swig = require('swig');
@@ -22,7 +23,10 @@ swig.setDefaults({ cache: false });
 // Don't leave both of these to `false` in production!
 
 app.get("/", function(req, res) {
-	//res.sendFile(__dirname + '/pages/index.html');
+	res.render('index', {});
+});
+
+app.get("/login", function(req, res) {
 	res.render('index', {});
 });
 
@@ -34,8 +38,9 @@ app.get("/login-failure", function(req, res) {
 	res.render('login-failure', {});
 });
 
-
-var port = 3000;
+app.get("/login-failure", function(req, res) {
+	res.render('account-created', {});
+});
 
 app.listen(port, function() {
 	console.log("Listening on " + port);
