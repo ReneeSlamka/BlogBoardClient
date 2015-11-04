@@ -27,7 +27,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/login", function(req, res) {
-	res.render('index', {});
+	res.render('login', {});
 });
 
 app.get("/home", function(req, res) {
