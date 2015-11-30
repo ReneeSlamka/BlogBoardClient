@@ -1,9 +1,10 @@
 .top-navbar {
     background-image: url("https://static.pexels.com/photos/2752/city-sunny-people-street.jpg");
     background-position: 24% 62%;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.overlay-layer {
+.top-navbar .overlay-layer {
     background-color: rgba(160,112,180,0.7);
     padding-top: 50px;
     padding-bottom: 30px;
