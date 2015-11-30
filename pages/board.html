@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% set activePage = 'board' %}
+
+{% block title %}{{boardName}}{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/css/board.css" />
+{% endblock css %}
+
+{%block headerJs %}
+{% endblock headerJs %}
+
+{% block js %}
+{% endblock js %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <section id="board-info-section">
+                <h3>{{boardName}}</h3>
+                <h6>Created {{dateCreated}}</h6>
+                <section id="list-board-members">
+                {% for member in boardMembers %}
+                    <h5>member</h5>
+                {% endfor %}
+                    <h5>Tester Jenny</h5>
+                </section>
+                <input type="text" class="form-control" id="member-username" size="40" />
+                <button onclick="addMember()" id="add-member-button" type="submit" class="btn btn-default">
+                    Add New Member
+                </button>
+            </section>
+        </div>
+        <div class="col-md-8">
+            <section id="post-section">
+                <label>
+                    New Post:
+                </label>
+                <input type="text" class="form-control" id="new-username" size="40" />
+                <button onclick="" id="new-post-button" type="submit" class="btn btn-default">
+                    Login
+                </button>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock content %}

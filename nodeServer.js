@@ -22,6 +22,15 @@ swig.setDefaults({ cache: false });
 // NOTE: You should always cache templates in a production environment.
 // Don't leave both of these to `false` in production!
 
+/*app.get('/:key?', function(req, res, next) {
+	var key = req.params.key;
+	if (!key) {
+		next();
+		return;
+	}
+	res.render('index', {});
+});*/
+
 app.get("/", function(req, res) {
 	res.render('index', {});
 });
@@ -34,8 +43,8 @@ app.get("/home", function(req, res) {
 	res.render('home', {});
 });
 
-app.get("/login-failure", function(req, res) {
-	res.render('login-failure', {});
+app.get("/board", function(req, res) {
+	res.render('board', {});
 });
 
 app.get("/login-failure", function(req, res) {

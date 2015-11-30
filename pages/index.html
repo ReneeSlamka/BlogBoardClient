@@ -1,72 +1,16 @@
-{% extends 'templates/layout.html' %}
+{% extends 'layout.html' %}
 
-{% block js %}
-<script type="text/javascript">
+{% block title %}Welcome to Blog Board{% endblock %}
 
-    function validateSession() {
-
-        var sessionCookie = getCookie("sessionIdCookie");
-        alert(sessionCookie);
-
-        var sessionJSONInfo;
-        if (sessionCookie !== null && sessionCookie.length > 0) {
-            sessionJSONInfo = JSON.parse(sessionCookie);
-            alert(sessionJSONInfo);
-        } else {
-            sessionJSONInfo = {
-                sessionID: "",
-                username: ""
-            }
-
-        }
-
-        $.ajax({
-            cache: false,
-            async: false,
-            url: "http://localhost:8080/session",
-            data: sessionJSONInfo,
-            dataType: 'json',
-            crossDomain: true,
-            success: function(result){
-                alert("token recieved: " + result);
-                //set updated sessionId from cookie here
-            },
-            error: function(request, textStatus, errorThrown) {
-                alert(textStatus);
-            },
-            complete: function(request, textStatus) { //for additional info
-                alert(request.responseText);
-                alert(request.responseJSON.httpResponseHeader);
-                if (window.location.href !== request.responseJSON.httpResponseHeader) {
-                    window.location.href = request.responseJSON.httpResponseHeader;
-                }
-            }
-        });
-    }
-
-    function getCookie(field) {
-        var field = field + "=";
-        var cookieFields = document.cookie.split(';');
-
-        for(var i=0; i < cookieFields.length; i++) {
-            var c = cookieFields[i];
-            //TODO alter check for empty cookies?
-            while (c.charAt(0)==' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(field) == 0) {
-                return c.substring(field.length, c.length);
-            }
-        }
-        return "";
-    }
-
-    validateSession();
-
-
-</script>
+{% block headerJs %}
 {% endblock %}
 
 {% block content %}
-<h1>THIS IS A TEMP LANDING PAGE</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h1 class="red">TEMP LANDING PAGE</h1>
+        </div>
+    </div>
+</div>
 {% endblock %}
