@@ -1,0 +1,42 @@
+#board-info-section {
+
+    background-color: rgba(0,0,0,0.7);
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    min-height: 600px;
+}
+
+.board-info {
+    color: rgba(255,255,255,1);
+    margin-top: 15px;
+}
+
+.board-member * {
+    display: inline-block;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+}
+
+.board-member h5 {
+    margin-left: 8px;
+}
+
+.board-member {
+    margin-bottom: 10px;
+}
+
+#board-entry-months * {
+    color: rgba(255,255,255,1);
+}
+
+.list-months  h6 {
+    margin-left: 15px;
+}

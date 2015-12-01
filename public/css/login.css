@@ -21,7 +21,7 @@
 #create-account-response-text {
     visibility: hidden;
     margin-top: 20px;
-    height: 65px;
+    height: 60px;
     opacity: 0.7;
     background-color: rgba(119,244,90, 0.8);
     border-color: rgba(28,159,16, 0.8);
@@ -31,6 +31,10 @@
 
 .account-services {
     margin-top: 25px;
+}
+
+.account-services h3 {
+    margin-top: 0px;
 }
 
 .account-service-form label {
